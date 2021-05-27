@@ -71,7 +71,8 @@
   },
   "scripts": {
     "test": "node scripts/test.js",
-    "start": "start-storybook -p 6006",
+    "start-dev": "start-storybook -p 6006",
+    "start": "node storyServer.js",
     "postinstall": "npm run build",
     "build": "build-storybook"
   },
