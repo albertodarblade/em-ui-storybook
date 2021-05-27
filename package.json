@@ -22,8 +22,7 @@
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "em-ui": "^2.0.12",
-    "engageme-ui": "^0.1.2",
+    "engageme-ui": "^0.1.3",
     "eslint": "^7.11.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
@@ -71,9 +70,10 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "start": "start-storybook -p 6006",
+    "postinstall": "npm run build",
+    "build": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -149,5 +149,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9"
   }
 }
