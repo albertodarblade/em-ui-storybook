@@ -1,15 +1,14 @@
 import React from 'react'
-import { Button, StyleProvider } from 'engageme-ui'
+import { IconButton, StyleProvider } from 'engageme-ui'
 import 'engageme-ui/dist/index.css'
 
 
-const { COLORS, SIZE } = Button.ENUMS;
+const { COLORS, SIZE } = IconButton.ENUMS;
 
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/IconButton',
+  component: IconButton,
   argTypes: {
-   
     color: {
       options: Object.values(COLORS),
       control: { type: 'radio' }
@@ -23,15 +22,15 @@ export default {
 
 const Template = (args) => (
   <StyleProvider>
-    <Button {...args} />
+    <IconButton {...args} />
   </StyleProvider>
 )
 
 export const Preview = Template.bind({})
 Preview.args = {
-  children: 'EXAMPLE',
-  isPrimaryAction: true,
+  shadow: false,
+  isPrimaryAction: false,
   disabled: false,
   loading: false,
-  icon: 'people'
+  name: 'people'
 }
