@@ -3,7 +3,7 @@ import { StyleProvider, DateTimePicker } from 'engageme-ui'
 import 'engageme-ui/dist/index.css'
 
 
-const { LANGUAGES } = DateTimePicker.ENUMS;
+const { LANGUAGES, VARIANTS } = DateTimePicker.ENUMS;
 
 export default {
   title: 'Example/DateTimePicker',
@@ -13,16 +13,20 @@ export default {
       options: Object.values(LANGUAGES),
       control: { type: 'radio' }
     },
-  
-  
+    variant: {
+      options: Object.values(VARIANTS),
+      control: { type: 'radio' }
+    },
   }
 }
 
-const Template = (args) => (
+const Template = (args) => {
+  const [value, setValue] = React.useState(null)
+  return (
   <StyleProvider>
-    <DateTimePicker {...args} />
+    <DateTimePicker {...args} value={value} onChange={setValue}/>
   </StyleProvider>
-)
+)}
 
 export const Preview = Template.bind({})
 Preview.args = {
@@ -32,5 +36,11 @@ Preview.args = {
   disableFuture: false,
   disablePast: false,
   disableToolbar: false,
-  emptyLabel: 'None'
+  clearable: false,
+  showTodayButton: false,
+  value: null,
+  emptyLabel: 'None',
+  minutesStep: 1,
+  label: 'Select a due date',
+  dateFormat: 'MMMM Do YYYY,'
 }
