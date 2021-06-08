@@ -31,4 +31,7 @@ Preview.args = {
   facebookId: "628280208129875",
   googleId:
     "428267294745-824i3qka450e4psj89hknvtiav6t5mtk.apps.googleusercontent.com",
+  onAuthenticate: (response, originalResponse) =>
+    console.log(response, originalResponse),
+  onFailure: (error) => console.log(error),
 };
